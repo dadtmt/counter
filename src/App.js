@@ -6,18 +6,25 @@ class App extends Component {
     this.state = {
       count: 0
     }
+    this.increment = this.increment.bind(this)
+  }
+
+  increment() {
+    console.log('increment')
+    //modifier le state
+    this.setState(
+      prevState => {
+        count: prevState.count + 1
+      }
+    )
   }
 
   render() {
     return (
       <div>
         <p>{this.state.count}</p>
-        <button onClick={ () => this.setState({
-          count: this.state.count - 1
-        })}>-</button>
-        <button onClick={ () => this.setState({
-          count: this.state.count + 1
-        })} >+</button>
+        <button>-</button>
+        <button onClick={this.increment} >+</button>
       </div>
     );
   }
