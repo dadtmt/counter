@@ -12,7 +12,9 @@ class App extends Component {
     return (
       <div>
         <p>{this.state.count}</p>
-        <button>-</button>
+        <button onClick={ () => this.setState({
+          count: this.state.count - 1
+        })}>-</button>
         <button onClick={ () => this.setState({
           count: this.state.count + 1
         })} >+</button>
